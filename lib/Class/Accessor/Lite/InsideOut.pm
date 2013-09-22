@@ -36,15 +36,26 @@ __END__
 
 =head1 NAME
 
-Class::Accessor::Lite::InsideOut - It's new $module
+Class::Accessor::Lite::InsideOut - Creates inside-out accessors easily
 
 =head1 SYNOPSIS
 
-    use Class::Accessor::Lite::InsideOut;
+    package Foo;
+    use Class::Accessor::Lite::InsideOut
+        rw => [ 'name' ];
+
+    sub new {
+        my ($class, $string) = @_;
+        bless \$string, $class; # not a blessed hashref
+    }
+
+    my $foo = Foo->new('xxx');
+    $foo->name('blah');
 
 =head1 DESCRIPTION
 
-Class::Accessor::Lite::InsideOut is ...
+Class::Accessor::Lite::InsideOut provides functionality to create accessors
+by the inside-out technique, useful for non-hashref based classes.
 
 =head1 LICENSE
 
