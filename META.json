@@ -4,7 +4,7 @@
       "motemen <motemen@gmail.com>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Minilla/v0.5.6, CPAN::Meta::Converter version 2.131560",
+   "generated_by" : "Minilla/v0.6.8, CPAN::Meta::Converter version 2.131560",
    "license" : [
       "perl_5"
    ],
@@ -53,5 +53,16 @@
       }
    },
    "release_status" : "unstable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/motemen/perl5-Class-Accessor-Lite-InsideOut/issues"
+      },
+      "homepage" : "https://github.com/motemen/perl5-Class-Accessor-Lite-InsideOut",
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com/motemen/perl5-Class-Accessor-Lite-InsideOut.git",
+         "web" : "https://github.com/motemen/perl5-Class-Accessor-Lite-InsideOut"
+      }
+   },
    "version" : "0.01"
 }

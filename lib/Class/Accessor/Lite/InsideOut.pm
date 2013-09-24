@@ -14,11 +14,21 @@ sub import {
 
     foreach my $name (@{ $args{rw} || [] }) {
         no strict 'refs';
-        *{"$pkg\::$name"} = mk_rw_accessor($name);
+        *{"$pkg\::$name"} = _rw_accessor($name);
     }
 }
 
-sub mk_rw_accessor {
+sub mk_accessors {
+    my (undef, @names) = @_;
+
+    my $pkg = caller;
+    foreach my $name (@names) {
+        no strict 'refs';
+        *{"$pkg\::$name"} = _rw_accessor($name);
+    }
+}
+
+sub _rw_accessor {
     my ($name) = @_;
 
     return sub {
